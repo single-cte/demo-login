@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- [{"plateColor":"2","areaName":"阳平高速(G65)","currentLocation":{"vno":"桂C19079","adr":"平乐县石灰窑,西北方向"},"count":0},
+		      {"plateColor":"2","areaName":"阳平高速(G65)","currentLocation":{"vno":"桂C87259","adr":"阳朔县阳朔斗牛城,南方向"},"count":0}]
+		转为[{"areaName":"阳平高速(G65)","adr":"平乐县石灰窑,西北方向"},
+		     {"areaName":"阳平高速(G65)","adr":"阳朔县阳朔斗牛城,南方向"}] -->
+			<script type="text/javascript">
+				let json1 = [{"plateColor":"2","areaName":"阳平高速(G65)","currentLocation":{"vno":"桂C19079","adr":"平乐县石灰窑,西北方向"},"count":0},
+		      {"plateColor":"2","areaName":"阳平高速(G65)","currentLocation":{"vno":"桂C87259","adr":"阳朔县阳朔斗牛城,南方向"},"count":0}]
+			  // console.log(json1)
+			  function getjson (json) {
+				  let json2 = []
+				  for (var i = 0; i < json.length; i++) {
+					  json2[i] = {"areaName":"","adr":""}
+					  json2[i].areaName = json1[i].areaName
+					  json2[i].adr = json1[i].currentLocation.adr
+				  }
+				  console.log(json2)
+			  }
+			  getjson(json1)
+			</script>
+	</body>
+</html>
